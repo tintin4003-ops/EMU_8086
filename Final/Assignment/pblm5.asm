@@ -1,9 +1,9 @@
 .model small
 .stack 100h
 .data
-    mes db 'enter a digit: $'
-    d db 10,13,'digit$'
-    i db 10,13,'invalid$' ;0-9 
+    mes db 'Enter a digit: $'
+    d db 10,13,'Digit$'
+    i db 10,13,'Invalid$' ;0-9 
 .code
 main proc 
     mov ax,@data
@@ -17,13 +17,14 @@ main proc
     ;take one character input
     mov ah,1              
     int 21h
-    mov bl,al
+    mov bl,al 
+    sub bl,48
     
     
-    cmp bl,30h 
+    cmp bl,0 
     jl INV
     
-    cmp bl,39h
+    cmp bl,9
     jle CHECK
     
     
@@ -44,8 +45,5 @@ EXIT:
 main endp
 end main       
     
-
-
-
 
 

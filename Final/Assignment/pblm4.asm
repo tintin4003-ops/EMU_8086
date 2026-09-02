@@ -1,10 +1,10 @@
 .model small
 .stack 100h
 .data
-    mes db 'enter a letter: $'
-    v db 10,13,'vowel$'
-    c db 10,13,'consonant$'
-    i db 10,13,'invalid$'
+    mes db 'Enter a letter:',10,13,' $'
+    v db 10,13,'Vowel',10,13,'$'
+    c db 10,13,'Consonant',10,13,'$'
+    i db 10,13,'Invalid',10,13,'$'
 .code
 main proc 
     mov ax,@data
@@ -79,6 +79,9 @@ EXIT:
 main endp
 end main        
     
+
+
+
 
 
 
